@@ -1,22 +1,34 @@
-drop table public.locomotive_brigades;
+drop trigger check_locomotive_brigade_before_insert_or_update on locomotives cascade;
+drop trigger check_med_check_after_insert on med_check cascade;
+drop trigger before_ticket_refund_insert on ticket_refunds cascade;
+drop function check_med_check_status cascade;
+drop function check_locomotive_brigade_type cascade;
+drop function check_and_process_refund cascade;
 
-drop table public.locomotive_maintenance;
-
-drop table public.locomotives;
-
-drop table public.technicians;
-
-drop table public.employees;
-
-drop table public.brigades;
-
-drop table public.departments;
-
-drop table public.tickets;
-
-drop table public.baggage;
-
-drop table public.delays;
-
-drop table public.schedules;
-
+drop table brigade_types cascade;
+drop table brigades cascade;
+drop table departments cascade;
+drop table professions cascade;
+drop table professions_attributes cascade;
+drop table employee cascade;
+drop table employee_professions cascade;
+drop table attributes_values cascade;
+drop table departments_headmasters cascade;
+drop table locomotives cascade;
+drop table locomotive_tech_brigades cascade;
+drop table inspection_schedule cascade;
+drop table tech_maintenance cascade;
+drop table locomotives_tech_maintenance cascade;
+drop table med_check cascade;
+drop table train_types cascade;
+drop table route_types cascade;
+drop table routes cascade;
+drop table train_schedule cascade;
+drop table passengers cascade;
+drop table ticket_offices cascade;
+drop table ticket_statuses cascade;
+drop table tickets cascade;
+drop table luggage cascade;
+drop table ticket_refunds cascade;
+drop table delay_reasons cascade;
+drop table train_delays cascade;

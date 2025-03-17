@@ -1,0 +1,233 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Diagram>
+  <ID>DATABASE</ID>
+  <OriginalElement>6f201ef4-df3b-4fa8-8994-636d52bb0826.TABLE:railwaydb.public.attributes_values</OriginalElement>
+  <nodes>
+    <node x="562.0" y="183.0">6f201ef4-df3b-4fa8-8994-636d52bb0826.TABLE:railwaydb.public.inspection_schedule</node>
+    <node x="-30.0" y="171.5">6f201ef4-df3b-4fa8-8994-636d52bb0826.TABLE:railwaydb.public.brigades</node>
+    <node x="1432.6652075471698" y="1168.3005545229112">6f201ef4-df3b-4fa8-8994-636d52bb0826.TABLE:railwaydb.public.luggage</node>
+    <node x="283.0" y="965.5">6f201ef4-df3b-4fa8-8994-636d52bb0826.TABLE:railwaydb.public.train_schedule</node>
+    <node x="-722.0" y="463.2042048517519">6f201ef4-df3b-4fa8-8994-636d52bb0826.TABLE:railwaydb.public.employee</node>
+    <node x="-722.0" y="823.5">6f201ef4-df3b-4fa8-8994-636d52bb0826.TABLE:railwaydb.public.departments_headmasters</node>
+    <node x="52.5" y="583.0">6f201ef4-df3b-4fa8-8994-636d52bb0826.TABLE:railwaydb.public.train_types</node>
+    <node x="455.5" y="63.0">6f201ef4-df3b-4fa8-8994-636d52bb0826.TABLE:railwaydb.public.route_types</node>
+    <node x="-175.0" y="1000.0">6f201ef4-df3b-4fa8-8994-636d52bb0826.TABLE:railwaydb.public.attributes_values</node>
+    <node x="-1025.6646361185983" y="478.18318059299196">6f201ef4-df3b-4fa8-8994-636d52bb0826.TABLE:railwaydb.public.departments</node>
+    <node x="245.0" y="1260.0">6f201ef4-df3b-4fa8-8994-636d52bb0826.TABLE:railwaydb.public.train_delays</node>
+    <node x="477.0" y="823.5">6f201ef4-df3b-4fa8-8994-636d52bb0826.TABLE:railwaydb.public.locomotives_tech_maintenance</node>
+    <node x="1428.1652075471698" y="1011.5">6f201ef4-df3b-4fa8-8994-636d52bb0826.TABLE:railwaydb.public.passengers</node>
+    <node x="1127.3568806469002" y="850.4220286792453">6f201ef4-df3b-4fa8-8994-636d52bb0826.TABLE:railwaydb.public.ticket_offices</node>
+    <node x="-225.0" y="380.0">6f201ef4-df3b-4fa8-8994-636d52bb0826.TABLE:railwaydb.public.professions_attributes</node>
+    <node x="-323.5" y="800.0">6f201ef4-df3b-4fa8-8994-636d52bb0826.TABLE:railwaydb.public.med_check</node>
+    <node x="-232.0" y="63.0">6f201ef4-df3b-4fa8-8994-636d52bb0826.TABLE:railwaydb.public.professions</node>
+    <node x="-832.0" y="1023.0">6f201ef4-df3b-4fa8-8994-636d52bb0826.TABLE:railwaydb.public.delay_reasons</node>
+    <node x="1253.32647442803" y="1254.7648321897575">6f201ef4-df3b-4fa8-8994-636d52bb0826.TABLE:railwaydb.public.ticket_statuses</node>
+    <node x="1121.9110245477077" y="977.0">6f201ef4-df3b-4fa8-8994-636d52bb0826.TABLE:railwaydb.public.tickets</node>
+    <node x="1036.4460700808627" y="1243.2648321897575">6f201ef4-df3b-4fa8-8994-636d52bb0826.TABLE:railwaydb.public.ticket_refunds</node>
+    <node x="545.0" y="380.0">6f201ef4-df3b-4fa8-8994-636d52bb0826.TABLE:railwaydb.public.tech_maintenance</node>
+    <node x="-30.0" y="-97.0">6f201ef4-df3b-4fa8-8994-636d52bb0826.TABLE:railwaydb.public.brigade_types</node>
+    <node x="-505.5" y="1000.0">6f201ef4-df3b-4fa8-8994-636d52bb0826.TABLE:railwaydb.public.employee_professions</node>
+    <node x="200.0" y="391.5">6f201ef4-df3b-4fa8-8994-636d52bb0826.TABLE:railwaydb.public.locomotives</node>
+    <node x="39.0" y="823.5">6f201ef4-df3b-4fa8-8994-636d52bb0826.TABLE:railwaydb.public.locomotive_tech_brigades</node>
+    <node x="412.5" y="548.5">6f201ef4-df3b-4fa8-8994-636d52bb0826.TABLE:railwaydb.public.routes</node>
+  </nodes>
+  <notes />
+  <edges>
+    <edge source="6f201ef4-df3b-4fa8-8994-636d52bb0826.TABLE:railwaydb.public.locomotive_tech_brigades" target="6f201ef4-df3b-4fa8-8994-636d52bb0826.TABLE:railwaydb.public.brigades" relationship="REFERENCES">
+      <point x="-63.0" y="-38.5" />
+      <point x="102.0" y="802.0" />
+      <point x="25.0" y="802.0" />
+      <point x="25.0" y="302.0" />
+      <point x="17.5" y="302.0" />
+      <point x="-47.5" y="50.5" />
+    </edge>
+    <edge source="6f201ef4-df3b-4fa8-8994-636d52bb0826.TABLE:railwaydb.public.ticket_refunds" target="6f201ef4-df3b-4fa8-8994-636d52bb0826.TABLE:railwaydb.public.tickets" relationship="REFERENCES">
+      <point x="0.0" y="-50.5" />
+      <point x="1127.9460700808627" y="1209.25" />
+      <point x="1206.8561739816694" y="1209.25" />
+      <point x="-15.55485056603834" y="22.40488554609192" />
+    </edge>
+    <edge source="6f201ef4-df3b-4fa8-8994-636d52bb0826.TABLE:railwaydb.public.tickets" target="6f201ef4-df3b-4fa8-8994-636d52bb0826.TABLE:railwaydb.public.passengers" relationship="REFERENCES">
+      <point x="25.125" y="-85.0" />
+      <point x="1247.5360245477077" y="1062.0" />
+      <point x="1518.6652075471698" y="1062.0" />
+      <point x="0.0" y="50.5" />
+    </edge>
+    <edge source="6f201ef4-df3b-4fa8-8994-636d52bb0826.TABLE:railwaydb.public.attributes_values" target="6f201ef4-df3b-4fa8-8994-636d52bb0826.TABLE:railwaydb.public.employee" relationship="REFERENCES">
+      <point x="-60.0" y="-62.0" />
+      <point x="-115.0" y="762.0" />
+      <point x="-275.0" y="762.0" />
+      <point x="-275.0" y="742.0" />
+      <point x="-567.5" y="742.0" />
+      <point x="51.5" y="85.0" />
+    </edge>
+    <edge source="6f201ef4-df3b-4fa8-8994-636d52bb0826.TABLE:railwaydb.public.tickets" target="6f201ef4-df3b-4fa8-8994-636d52bb0826.TABLE:railwaydb.public.locomotives" relationship="REFERENCES">
+      <point x="-75.375" y="-85.0" />
+      <point x="1147.0360245477077" y="1078.612398921833" />
+      <point x="445.0" y="1078.612398921833" />
+      <point x="445.0" y="722.0" />
+      <point x="387.5" y="722.0" />
+      <point x="62.5" y="50.5" />
+    </edge>
+    <edge source="6f201ef4-df3b-4fa8-8994-636d52bb0826.TABLE:railwaydb.public.train_schedule" target="6f201ef4-df3b-4fa8-8994-636d52bb0826.TABLE:railwaydb.public.train_types" relationship="REFERENCES">
+      <point x="-68.0" y="-96.5" />
+      <point x="317.0" y="782.0" />
+      <point x="145.0" y="782.0" />
+      <point x="0.0" y="39.0" />
+    </edge>
+    <edge source="6f201ef4-df3b-4fa8-8994-636d52bb0826.TABLE:railwaydb.public.brigades" target="6f201ef4-df3b-4fa8-8994-636d52bb0826.TABLE:railwaydb.public.brigade_types" relationship="REFERENCES">
+      <point x="0.0" y="-50.5" />
+      <point x="0.0" y="39.0" />
+    </edge>
+    <edge source="6f201ef4-df3b-4fa8-8994-636d52bb0826.TABLE:railwaydb.public.train_delays" target="6f201ef4-df3b-4fa8-8994-636d52bb0826.TABLE:railwaydb.public.delay_reasons" relationship="REFERENCES">
+      <point x="-50.0" y="-62.0" />
+      <point x="295.0" y="1222.0" />
+      <point x="-755.0" y="1222.0" />
+      <point x="0.0" y="39.0" />
+    </edge>
+    <edge source="6f201ef4-df3b-4fa8-8994-636d52bb0826.TABLE:railwaydb.public.tickets" target="6f201ef4-df3b-4fa8-8994-636d52bb0826.TABLE:railwaydb.public.ticket_statuses" relationship="REFERENCES">
+      <point x="94.02151485929676" y="29.495599836118572" />
+      <point x="1316.4325394070045" y="1132.340096534771" />
+      <point x="1254.0026244398912" y="1132.340096534771" />
+      <point x="1254.0026244398912" y="1209.25" />
+      <point x="1333.82647442803" y="1209.25" />
+      <point x="0.0" y="39.0" />
+    </edge>
+    <edge source="6f201ef4-df3b-4fa8-8994-636d52bb0826.TABLE:railwaydb.public.tech_maintenance" target="6f201ef4-df3b-4fa8-8994-636d52bb0826.TABLE:railwaydb.public.inspection_schedule" relationship="REFERENCES">
+      <point x="0.0" y="-62.0" />
+      <point x="0.0" y="39.0" />
+    </edge>
+    <edge source="6f201ef4-df3b-4fa8-8994-636d52bb0826.TABLE:railwaydb.public.luggage" target="6f201ef4-df3b-4fa8-8994-636d52bb0826.TABLE:railwaydb.public.passengers" relationship="REFERENCES">
+      <point x="0.0" y="-39.0" />
+      <point x="1518.6652075471698" y="1070.043698113208" />
+      <point x="89.35143396226204" y="8.043698113208052" />
+    </edge>
+    <edge source="6f201ef4-df3b-4fa8-8994-636d52bb0826.TABLE:railwaydb.public.med_check" target="6f201ef4-df3b-4fa8-8994-636d52bb0826.TABLE:railwaydb.public.employee" relationship="REFERENCES">
+      <point x="0.0" y="-62.0" />
+      <point x="-235.0" y="762.0" />
+      <point x="-275.0" y="762.0" />
+      <point x="-275.0" y="742.0" />
+      <point x="-567.5" y="742.0" />
+      <point x="51.5" y="85.0" />
+    </edge>
+    <edge source="6f201ef4-df3b-4fa8-8994-636d52bb0826.TABLE:railwaydb.public.tickets" target="6f201ef4-df3b-4fa8-8994-636d52bb0826.TABLE:railwaydb.public.ticket_offices" relationship="REFERENCES">
+      <point x="6.029772183287605" y="-83.81445159676502" />
+      <point x="1228.4407967309953" y="942.3907037671164" />
+      <point x="1228.4407967309953" y="923.8304139557956" />
+      <point x="-6.27601146307461" y="34.40838527655035" />
+    </edge>
+    <edge source="6f201ef4-df3b-4fa8-8994-636d52bb0826.TABLE:railwaydb.public.locomotives_tech_maintenance" target="6f201ef4-df3b-4fa8-8994-636d52bb0826.TABLE:railwaydb.public.locomotives" relationship="REFERENCES">
+      <point x="-74.0" y="-38.5" />
+      <point x="551.0" y="802.0" />
+      <point x="265.0" y="802.0" />
+      <point x="265.0" y="522.0" />
+      <point x="262.5" y="522.0" />
+      <point x="-62.5" y="50.5" />
+    </edge>
+    <edge source="6f201ef4-df3b-4fa8-8994-636d52bb0826.TABLE:railwaydb.public.employee" target="6f201ef4-df3b-4fa8-8994-636d52bb0826.TABLE:railwaydb.public.departments" relationship="REFERENCES">
+      <point x="-51.5" y="-85.0" />
+      <point x="-670.5" y="502.0" />
+      <point x="-906.1646361185983" y="502.0" />
+      <point x="0.0" y="39.0" />
+    </edge>
+    <edge source="6f201ef4-df3b-4fa8-8994-636d52bb0826.TABLE:railwaydb.public.departments_headmasters" target="6f201ef4-df3b-4fa8-8994-636d52bb0826.TABLE:railwaydb.public.departments" relationship="REFERENCES">
+      <point x="-63.5" y="-38.5" />
+      <point x="-658.5" y="802.0" />
+      <point x="-906.1646361185983" y="802.0" />
+      <point x="0.0" y="39.0" />
+    </edge>
+    <edge source="6f201ef4-df3b-4fa8-8994-636d52bb0826.TABLE:railwaydb.public.employee_professions" target="6f201ef4-df3b-4fa8-8994-636d52bb0826.TABLE:railwaydb.public.professions" relationship="REFERENCES">
+      <point x="-55.25" y="-62.0" />
+      <point x="-450.25" y="782.0" />
+      <point x="-455.0" y="782.0" />
+      <point x="-455.0" y="342.0" />
+      <point x="-115.0" y="342.0" />
+      <point x="0.0" y="39.0" />
+    </edge>
+    <edge source="6f201ef4-df3b-4fa8-8994-636d52bb0826.TABLE:railwaydb.public.routes" target="6f201ef4-df3b-4fa8-8994-636d52bb0826.TABLE:railwaydb.public.route_types" relationship="REFERENCES">
+      <point x="0.0" y="-73.5" />
+      <point x="0.0" y="39.0" />
+    </edge>
+    <edge source="6f201ef4-df3b-4fa8-8994-636d52bb0826.TABLE:railwaydb.public.locomotives_tech_maintenance" target="6f201ef4-df3b-4fa8-8994-636d52bb0826.TABLE:railwaydb.public.tech_maintenance" relationship="REFERENCES">
+      <point x="74.0" y="-38.5" />
+      <point x="699.0" y="802.0" />
+      <point x="665.0" y="802.0" />
+      <point x="0.0" y="62.0" />
+    </edge>
+    <edge source="6f201ef4-df3b-4fa8-8994-636d52bb0826.TABLE:railwaydb.public.departments_headmasters" target="6f201ef4-df3b-4fa8-8994-636d52bb0826.TABLE:railwaydb.public.employee" relationship="REFERENCES">
+      <point x="63.5" y="-38.5" />
+      <point x="-531.5" y="802.0" />
+      <point x="-670.5" y="802.0" />
+      <point x="-51.5" y="85.0" />
+    </edge>
+    <edge source="6f201ef4-df3b-4fa8-8994-636d52bb0826.TABLE:railwaydb.public.attributes_values" target="6f201ef4-df3b-4fa8-8994-636d52bb0826.TABLE:railwaydb.public.professions_attributes" relationship="REFERENCES">
+      <point x="60.0" y="-62.0" />
+      <point x="5.0" y="742.0" />
+      <point x="-115.0" y="742.0" />
+      <point x="0.0" y="62.0" />
+    </edge>
+    <edge source="6f201ef4-df3b-4fa8-8994-636d52bb0826.TABLE:railwaydb.public.train_schedule" target="6f201ef4-df3b-4fa8-8994-636d52bb0826.TABLE:railwaydb.public.locomotives" relationship="REFERENCES">
+      <point x="68.0" y="-96.5" />
+      <point x="453.0" y="742.0" />
+      <point x="445.0" y="742.0" />
+      <point x="445.0" y="722.0" />
+      <point x="387.5" y="722.0" />
+      <point x="62.5" y="50.5" />
+    </edge>
+    <edge source="6f201ef4-df3b-4fa8-8994-636d52bb0826.TABLE:railwaydb.public.locomotive_tech_brigades" target="6f201ef4-df3b-4fa8-8994-636d52bb0826.TABLE:railwaydb.public.locomotives" relationship="REFERENCES">
+      <point x="63.0" y="-38.5" />
+      <point x="228.0" y="802.0" />
+      <point x="265.0" y="802.0" />
+      <point x="265.0" y="522.0" />
+      <point x="262.5" y="522.0" />
+      <point x="-62.5" y="50.5" />
+    </edge>
+    <edge source="6f201ef4-df3b-4fa8-8994-636d52bb0826.TABLE:railwaydb.public.train_delays" target="6f201ef4-df3b-4fa8-8994-636d52bb0826.TABLE:railwaydb.public.train_schedule" relationship="REFERENCES">
+      <point x="50.0" y="-62.0" />
+      <point x="395.0" y="1222.0" />
+      <point x="385.0" y="1222.0" />
+      <point x="0.0" y="96.5" />
+    </edge>
+    <edge source="6f201ef4-df3b-4fa8-8994-636d52bb0826.TABLE:railwaydb.public.train_schedule" target="6f201ef4-df3b-4fa8-8994-636d52bb0826.TABLE:railwaydb.public.routes" relationship="REFERENCES">
+      <point x="0.0" y="-96.5" />
+      <point x="385.0" y="782.0" />
+      <point x="525.0" y="782.0" />
+      <point x="0.0" y="73.5" />
+    </edge>
+    <edge source="6f201ef4-df3b-4fa8-8994-636d52bb0826.TABLE:railwaydb.public.locomotives" target="6f201ef4-df3b-4fa8-8994-636d52bb0826.TABLE:railwaydb.public.brigades" relationship="REFERENCES">
+      <point x="0.0" y="-50.5" />
+      <point x="325.0" y="362.0" />
+      <point x="112.5" y="362.0" />
+      <point x="47.5" y="50.5" />
+    </edge>
+    <edge source="6f201ef4-df3b-4fa8-8994-636d52bb0826.TABLE:railwaydb.public.employee_professions" target="6f201ef4-df3b-4fa8-8994-636d52bb0826.TABLE:railwaydb.public.employee" relationship="REFERENCES">
+      <point x="55.25" y="-62.0" />
+      <point x="-339.75" y="762.0" />
+      <point x="-275.0" y="762.0" />
+      <point x="-275.0" y="742.0" />
+      <point x="-567.5" y="742.0" />
+      <point x="51.5" y="85.0" />
+    </edge>
+    <edge source="6f201ef4-df3b-4fa8-8994-636d52bb0826.TABLE:railwaydb.public.professions_attributes" target="6f201ef4-df3b-4fa8-8994-636d52bb0826.TABLE:railwaydb.public.professions" relationship="REFERENCES">
+      <point x="0.0" y="-62.0" />
+      <point x="0.0" y="39.0" />
+    </edge>
+    <edge source="6f201ef4-df3b-4fa8-8994-636d52bb0826.TABLE:railwaydb.public.employee" target="6f201ef4-df3b-4fa8-8994-636d52bb0826.TABLE:railwaydb.public.brigades" relationship="REFERENCES">
+      <point x="51.5" y="-85.0" />
+      <point x="-567.5" y="362.0" />
+      <point x="25.0" y="362.0" />
+      <point x="25.0" y="302.0" />
+      <point x="17.5" y="302.0" />
+      <point x="-47.5" y="50.5" />
+    </edge>
+  </edges>
+  <settings layout="Hierarchic Compact" zoom="0.6179213857428385" showDependencies="false" x="621.8219423182704" y="1031.633948016832" />
+  <SelectedNodes>
+    <node>6f201ef4-df3b-4fa8-8994-636d52bb0826.TABLE:railwaydb.public.passengers</node>
+  </SelectedNodes>
+  <Categories>
+    <Category>Columns</Category>
+    <Category>Key columns</Category>
+  </Categories>
+</Diagram>
+

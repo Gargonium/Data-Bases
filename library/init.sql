@@ -38,7 +38,8 @@ create table reader_categories
 create table readers
 (
     id                serial primary key,
-    category_id       int          not null references reader_categories (id) on delete restrict,
+    category_id       int          not null references reader_categories (id),
+    unique (id, category_id),
     library_id        int          not null references libraries (id) on delete restrict,
     first_name        varchar(255) not null,
     last_name         varchar(255) not null,
@@ -49,15 +50,19 @@ create table reader_category_attributes
 (
     id          serial primary key,
     category_id int          not null references reader_categories (id) on delete cascade,
+    unique (id, category_id),
     name        varchar(255) not null
 );
 
 create table reader_category_attribute_values
 (
-    reader_id    int          not null references readers (id) on delete cascade,
-    attribute_id int          not null references reader_category_attributes (id) on delete cascade,
+    reader_id    int          not null,
+    category_id  int          not null,
+    attribute_id int          not null,
     value        varchar(255) not null,
-    primary key (reader_id, attribute_id)
+    primary key (reader_id, attribute_id),
+    foreign key (reader_id, category_id) references readers (id, category_id),
+    foreign key (attribute_id, category_id) references reader_category_attributes (id, category_id)
 );
 
 create table work_categories
@@ -78,6 +83,7 @@ create table works
     id          serial primary key,
     title       varchar(255) not null,
     category_id int          not null references work_categories (id) on delete restrict,
+    unique (id, category_id),
     author      int          not null references authors (id) on delete restrict
 );
 
@@ -85,15 +91,19 @@ create table work_category_attributes
 (
     id          serial primary key,
     category_id int          not null references work_categories (id) on delete cascade,
+    unique (id, category_id),
     name        varchar(255) not null
 );
 
 create table work_category_attribute_values
 (
-    work_id      int          not null references works (id) on delete cascade,
-    attribute_id int          not null references work_category_attributes (id) on delete cascade,
+    work_id      int          not null,
+    category_id  int          not null,
+    attribute_id int          not null,
     value        varchar(255) not null,
-    primary key (work_id, attribute_id)
+    primary key (work_id, attribute_id),
+    foreign key (work_id, category_id) references works (id, category_id),
+    foreign key (attribute_id, category_id) references work_category_attributes (id, category_id)
 );
 
 create table publications
@@ -117,6 +127,15 @@ create table publication_rules
     reading_room_only boolean not null default false,
     loan_period_days  int,
     check ((reading_room_only = true and loan_period_days is null) or (reading_room_only = false))
+);
+
+create table employee
+(
+    id              serial primary key,
+    library_id      int          not null references libraries (id) on delete restrict,
+    reading_room_id int          not null references reading_rooms (id) on delete restrict,
+    first_name      varchar(255) not null,
+    last_name       varchar(255) not null
 );
 
 create table publications_copy
@@ -148,15 +167,6 @@ create table loans
     issued_employee_id    int  not null references employee (id) on delete restrict
 );
 
-create table employee
-(
-    id              serial primary key,
-    library_id      int          not null references libraries (id) on delete restrict,
-    reading_room_id int          not null references reading_rooms (id) on delete restrict,
-    first_name      varchar(255) not null,
-    last_name       varchar(255) not null
-);
-
 create table reading_process
 (
     id                    serial primary key,
@@ -165,8 +175,8 @@ create table reading_process
     issued_employee_id    int       not null references employee (id) on delete cascade,
     library_id            int       not null references libraries (id) on delete cascade,
     reading_room_id       int       not null references reading_rooms (id) on delete cascade,
-    issued_date           date      not null,
-    issued_time           timestamp not null,
-    return_date           date      not null default issued_date,
-    return_time           timestamp not null check ( return_time > reading_process.issued_time )
+    issued_date           date      not null default current_date,
+    issued_time           time not null,
+    return_date           date      null,
+    return_time           time not null check ( return_time > reading_process.issued_time )
 );

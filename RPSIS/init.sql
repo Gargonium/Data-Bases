@@ -42,7 +42,11 @@ create table employee
     department_id      int          references departments (id) on delete set null, -- Отдел к которому он привязан
     brigade_id         int          references brigades (id) on delete set null,    -- Бригада в которой он состоит
     date_of_employment date         not null,                                       -- Дата приёма на работу
-    date_of_dismissal  date default null                                            -- Дата увольнения
+    date_of_dismissal  date default null,                                           -- Дата увольнения
+    salary             int          not null,
+    gender             varchar(255) not null,
+    birthday           date         not null,
+    children           varchar(255) not null
 );
 
 create table employee_professions
@@ -66,7 +70,8 @@ create table departments_headmasters
 (
     department_id int references departments (id),
     headmaster_id int references employee (id),
-    primary key (department_id, headmaster_id)
+    primary key (department_id, headmaster_id),
+    unique (headmaster_id)
 );
 
 -- Локомотивы
@@ -134,8 +139,21 @@ create table routes
     id              serial primary key,
     departure_point varchar(255)                                      not null,
     arrival_point   varchar(255)                                      not null,
-    route_type      int references route_types (id) on delete cascade not null,
-    main_points     text[]                                            not null
+    route_type      int references route_types (id) on delete cascade not null
+);
+
+create table stations
+(
+    id           serial primary key,
+    station_name varchar(255) not null
+);
+
+create table route_main_points
+(
+    id                     serial primary key,
+    route_id               int references routes (id) on delete cascade not null,
+    station_id             int references stations (id)                 not null,
+    station_ordinal_number int                                          not null check ( station_ordinal_number > 0 )
 );
 
 create table train_schedule
@@ -151,9 +169,10 @@ create table train_schedule
 
 create table passengers
 (
-    id        serial primary key,
-    full_name varchar(255) not null,
-    age       int          not null
+    id         serial primary key,
+    full_name  varchar(255) not null,
+    birth_date date         not null
+    --age      int          not null
 );
 
 create table ticket_offices

@@ -6,13 +6,13 @@ begin
     -- Получаем train_id из таблицы tickets, используя ticket_id из new (новый refund)
     if (select ts.departure_time from train_schedule ts
                                           join tickets t on t.train_id = ts.train_id
-        where t.id = new.ticket_id) <= now() then
+        where t.id = new.ticket_id) <= new.refund_date then
         raise exception 'Refund is not allowed after the train has departed';
     end if;
 
     -- Обновляем статус билета на "Returned"
     update tickets
-    set status = 'Returned'
+    set status = 3
     where id = new.ticket_id;
 
     return new;
@@ -63,7 +63,7 @@ begin
     -- Проверяем, что тип бригады, ссылающейся на locomotive_brigade_id, является 'Locomotive brigade'
     if (select bt.type_name from brigade_types bt
                                      join brigades b on b.brigade_type = bt.id
-        where b.id = new.locomotive_brigade_id) != 'Locomotive brigade' then
+        where b.id = new.locomotive_brigade_id) != 'локомотивная' then
         raise exception 'Only the locomotive crew can be assigned to the locomotive.';
     end if;
 

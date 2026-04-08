@@ -1,9 +1,9 @@
-drop trigger check_locomotive_brigade_before_insert_or_update on locomotives cascade;
-drop trigger check_med_check_after_insert on med_check cascade;
-drop trigger before_ticket_refund_insert on ticket_refunds cascade;
-drop function check_med_check_status cascade;
-drop function check_locomotive_brigade_type cascade;
-drop function check_and_process_refund cascade;
+-- drop trigger check_locomotive_brigade_before_insert_or_update on locomotives cascade;
+-- drop trigger check_med_check_after_insert on med_check cascade;
+-- drop trigger before_ticket_refund_insert on ticket_refunds cascade;
+-- drop function check_med_check_status cascade;
+-- drop function check_locomotive_brigade_type cascade;
+-- drop function check_and_process_refund cascade;
 
 drop table brigade_types cascade;
 drop table brigades cascade;
@@ -23,6 +23,8 @@ drop table med_check cascade;
 drop table train_types cascade;
 drop table route_types cascade;
 drop table routes cascade;
+drop table stations cascade;
+drop table route_main_points cascade;
 drop table train_schedule cascade;
 drop table passengers cascade;
 drop table ticket_offices cascade;

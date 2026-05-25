@@ -162,7 +162,7 @@ create table loans
     reader_id             int  not null references readers (id) on delete restrict,
     copy_inventory_number int  not null references publications_copy (inventory_number) on delete restrict,
     date_of_issue         date not null,
-    return_date           date not null check ( return_date > loans.date_of_issue ),
+    return_date           date check ( return_date > loans.date_of_issue ),
     expire_date           date not null check ( expire_date > loans.date_of_issue ),
     issued_employee_id    int  not null references employee (id) on delete restrict
 );
@@ -170,13 +170,13 @@ create table loans
 create table reading_process
 (
     id                    serial primary key,
-    reader_id             int       not null references readers (id) on delete cascade,
-    copy_inventory_number int       not null references publications_copy (inventory_number) on delete cascade,
-    issued_employee_id    int       not null references employee (id) on delete cascade,
-    library_id            int       not null references libraries (id) on delete cascade,
-    reading_room_id       int       not null references reading_rooms (id) on delete cascade,
-    issued_date           date      not null default current_date,
+    reader_id             int  not null references readers (id) on delete cascade,
+    copy_inventory_number int  not null references publications_copy (inventory_number) on delete cascade,
+    issued_employee_id    int  not null references employee (id) on delete cascade,
+    library_id            int  not null references libraries (id) on delete cascade,
+    reading_room_id       int  not null references reading_rooms (id) on delete cascade,
+    issued_date           date not null default current_date,
     issued_time           time not null,
-    return_date           date      null,
-    return_time           time not null check ( return_time > reading_process.issued_time )
+    return_date           date,
+    return_time           time check ( return_time > reading_process.issued_time )
 );

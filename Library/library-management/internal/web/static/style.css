@@ -1,0 +1,21 @@
+body {
+    background-color: #f8f9fa;
+}
+.card {
+    margin-top: 20px;
+    box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+}
+.table-responsive {
+    margin-top: 15px;
+}
+/* Фикс для кнопок в тёмной навигационной панели */
+.navbar-dark .navbar-nav .nav-link {
+    color: rgba(0, 0, 0, 0.85);
+}
+.navbar-dark .navbar-nav .nav-link:hover {
+    color: #000000;
+}
+.navbar-dark .navbar-nav .nav-link.active {
+    color: #000000;
+    font-weight: bold;
+}

@@ -1,0 +1,64 @@
+@startuml
+
+!theme plain
+top to bottom direction
+skinparam linetype ortho
+
+class attributes_values
+class brigade_types
+class brigades
+class delay_reasons
+class departments
+class departments_headmasters
+class employee
+class employee_professions
+class inspection_schedule
+class locomotive_tech_brigades
+class locomotives
+class locomotives_tech_maintenance
+class luggage
+class med_check
+class passengers
+class professions
+class professions_attributes
+class route_types
+class routes
+class tech_maintenance
+class ticket_offices
+class ticket_refunds
+class ticket_statuses
+class tickets
+class train_delays
+class train_schedule
+class train_types
+
+attributes_values             -[#595959,plain]-^  employee                     : "employee_id:id"
+attributes_values             -[#595959,plain]-^  professions_attributes       : "profession_attribute_id:id"
+brigades                      -[#595959,plain]-^  brigade_types                : "brigade_type:id"
+departments_headmasters       -[#595959,plain]-^  departments                  : "department_id:id"
+departments_headmasters       -[#595959,plain]-^  employee                     : "headmaster_id:id"
+employee                      -[#595959,plain]-^  brigades                     : "brigade_id:id"
+employee                      -[#595959,plain]-^  departments                  : "department_id:id"
+employee_professions          -[#595959,plain]-^  employee                     : "employee_id:id"
+employee_professions          -[#595959,plain]-^  professions                  : "profession_id:id"
+locomotive_tech_brigades      -[#595959,plain]-^  brigades                     : "brigade_id:id"
+locomotive_tech_brigades      -[#595959,plain]-^  locomotives                  : "locomotive_id:id"
+locomotives                   -[#595959,plain]-^  brigades                     : "locomotive_brigade_id:id"
+locomotives_tech_maintenance  -[#595959,plain]-^  locomotives                  : "locomotive_id:id"
+locomotives_tech_maintenance  -[#595959,plain]-^  tech_maintenance             : "tech_id:id"
+luggage                       -[#595959,plain]-^  passengers                   : "passenger_id:id"
+med_check                     -[#595959,plain]-^  employee                     : "employee_id:id"
+professions_attributes        -[#595959,plain]-^  professions                  : "profession_id:id"
+routes                        -[#595959,plain]-^  route_types                  : "route_type:id"
+tech_maintenance              -[#595959,plain]-^  inspection_schedule          : "inspection_schedule_id:id"
+ticket_refunds                -[#595959,plain]-^  tickets                      : "ticket_id:id"
+tickets                       -[#595959,plain]-^  locomotives                  : "train_id:id"
+tickets                       -[#595959,plain]-^  passengers                   : "passenger_id:id"
+tickets                       -[#595959,plain]-^  ticket_offices               : "ticket_office_id:id"
+tickets                       -[#595959,plain]-^  ticket_statuses              : "status:id"
+train_delays                  -[#595959,plain]-^  delay_reasons                : "delay_reason_id:id"
+train_delays                  -[#595959,plain]-^  train_schedule               : "train_schedule_id:id"
+train_schedule                -[#595959,plain]-^  locomotives                  : "train_id:id"
+train_schedule                -[#595959,plain]-^  routes                       : "route_id:id"
+train_schedule                -[#595959,plain]-^  train_types                  : "train_type_id:id"
+@enduml

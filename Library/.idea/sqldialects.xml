@@ -4,5 +4,6 @@
     <file url="file://$PROJECT_DIR$/DB-related-files/init.sql" dialect="PostgreSQL" />
     <file url="file://$PROJECT_DIR$/DB-related-files/insert_data.sql" dialect="PostgreSQL" />
     <file url="file://$PROJECT_DIR$/DB-related-files/recreate_db.sql" dialect="PostgreSQL" />
+    <file url="file://$PROJECT_DIR$/DB-related-files/triggers.sql" dialect="PostgreSQL" />
   </component>
 </project>

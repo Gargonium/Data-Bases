@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="DataSourcePerFileMappings">
+    <file url="file://$PROJECT_DIR$/DB-related-files/init.sql" value="fd13542e-7456-4a72-865a-4d1fa7fc2e05" />
+    <file url="file://$PROJECT_DIR$/DB-related-files/insert_data.sql" value="fd13542e-7456-4a72-865a-4d1fa7fc2e05" />
+    <file url="file://$PROJECT_DIR$/DB-related-files/recreate_db.sql" value="fd13542e-7456-4a72-865a-4d1fa7fc2e05" />
+    <file url="file://$PROJECT_DIR$/DB-related-files/triggers.sql" value="fd13542e-7456-4a72-865a-4d1fa7fc2e05" />
+  </component>
+</project>

@@ -2,5 +2,9 @@
 <project version="4">
   <component name="VcsDirectoryMappings">
     <mapping directory="$PROJECT_DIR$" vcs="Git" />
+    <mapping directory="$USER_HOME$/Desktop/PerSea/persea-frontend" vcs="Git" />
+    <mapping directory="$USER_HOME$/Desktop/PerSea/persea-product-service" vcs="Git" />
+    <mapping directory="$USER_HOME$/Desktop/PerSea/persea-recommendation-service" vcs="Git" />
+    <mapping directory="$USER_HOME$/Desktop/PerSea/persea-user-service" vcs="Git" />
   </component>
 </project>

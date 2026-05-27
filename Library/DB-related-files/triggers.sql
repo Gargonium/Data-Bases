@@ -13,7 +13,7 @@ begin
 end;
 $$ language plpgsql;
 
-create trigger trg_employee_room_library
+create or replace trigger trg_employee_room_library
     before insert or update
     on employee
     for each row
@@ -38,7 +38,7 @@ begin
 end;
 $$ language plpgsql;
 
-create trigger trg_loans_reading_room_only
+create or replace trigger trg_loans_reading_room_only
     before insert
     on loans
     for each row
@@ -46,10 +46,10 @@ execute function prevent_loans_reading_room_only();
 
 
 -- Чтобы протестировать выполни select, и вставь результат в copy_inventory_number
-select inventory_number from publications_copy where publication_id = (select publication_id from publication_rules where reading_room_only = true);
-
-insert into loans (reader_id, copy_inventory_number, date_of_issue, return_date, expire_date, issued_employee_id)
-values (1, 1001, '2024-12-18', null, null, 1);
+-- select inventory_number from publications_copy where publication_id = (select publication_id from publication_rules where reading_room_only = true);
+--
+-- insert into loans (reader_id, copy_inventory_number, date_of_issue, return_date, expire_date, issued_employee_id)
+-- values (1, 1001, '2024-12-18', null, null, 1);
 
 
 -- 3. Если не указать дату возврата книги, то установится автоматически
@@ -79,7 +79,7 @@ begin
 end;
 $$ language plpgsql;
 
-create trigger trg_loans_set_expire_date
+create or replace trigger trg_loans_set_expire_date
     before insert
     on loans
     for each row
@@ -103,16 +103,16 @@ begin
 end;
 $$ language plpgsql;
 
-create trigger trg_loans_no_active
+create or replace trigger trg_loans_no_active
     before insert or update
     on loans
     for each row
 execute function check_no_active_loan();
 
 -- Test
-select copy_inventory_number from loans where return_date is null;
-insert into loans (reader_id, copy_inventory_number, date_of_issue, return_date, expire_date, issued_employee_id)
-values (1, 100038, '2024-12-18', null, null, 1);
+-- select copy_inventory_number from loans where return_date is null;
+-- insert into loans (reader_id, copy_inventory_number, date_of_issue, return_date, expire_date, issued_employee_id)
+-- values (1, 100038, '2024-12-18', null, null, 1);
 
 
 -- В зал
@@ -131,7 +131,7 @@ begin
 end;
 $$ language plpgsql;
 
-create trigger trg_reading_process_no_active
+create or replace trigger trg_reading_process_no_active
     before insert or update
     on reading_process
     for each row
@@ -139,9 +139,9 @@ execute function check_no_active_reading();
 
 -- Test
 
-select copy_inventory_number from reading_process where return_date is null;
-insert into reading_process (reader_id, copy_inventory_number, issued_employee_id, library_id, reading_room_id, issued_time, return_date, return_time)
-values (1, 100072, 1, 1, 1,  '11:21:21',null, null);
+-- select copy_inventory_number from reading_process where return_date is null;
+-- insert into reading_process (reader_id, copy_inventory_number, issued_employee_id, library_id, reading_room_id, issued_time, return_date, return_time)
+-- values (1, 100072, 1, 1, 1,  '11:21:21',null, null);
 
 -- 5. При списывании книги, удаляем запись о ней в основном фонде
 create or replace function write_off_copy()
@@ -184,7 +184,7 @@ begin
 end;
 $$ language plpgsql;
 
-create trigger trg_written_off_process
+create or replace trigger trg_written_off_process
     before insert
     on written_off
     for each row
@@ -192,13 +192,13 @@ execute function write_off_copy();
 
 -- Test
 
-insert into publications_copy (inventory_number, publication_id, shelf_id, receipt_date, received_employee_id)
-values ('9999', 1, 1, '2025-04-03', 1);
-
-insert into written_off (inventory_number, publication_id, write_off_date, write_off_employee_id)
-values ('9999', 1, '2026-05-06', 1);
-
-delete from written_off where inventory_number = '9999';
+-- insert into publications_copy (inventory_number, publication_id, shelf_id, receipt_date, received_employee_id)
+-- values ('9999', 1, 1, '2025-04-03', 1);
+--
+-- insert into written_off (inventory_number, publication_id, write_off_date, write_off_employee_id)
+-- values ('9999', 1, '2026-05-06', 1);
+--
+-- delete from written_off where inventory_number = '9999';
 
 -- 6. Функция проверки доступности экземпляра по инвертарному номеру
 create or replace function is_copy_available(p_inv_number int)
@@ -222,5 +222,5 @@ end;
 $$ language plpgsql;
 
 -- Test
-select is_copy_available(100057);
+-- select is_copy_available(100057);
 
